@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<style>
+		@font-face {
+			font-family:'One Fell Swoop'; 
+			src: url(ONEFS.TTF) format("truetype"); 
+		} 
+	</style>
+	<defs>
+		<radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+			<stop offset="0%" style="stop-color:blue; stop-opacity:0.3"/>
+			<stop offset="100%" style="stop-color:green;stop-opacity:0.8"/>
+		</radialGradient>
+		
+		<filter id="f1" x="0" y="0" width="200%" height="200%">
+			<feOffset result="offOut" in="SourceAlpha" dx="6" dy="6"/>
+			<feGaussianBlur result="blurOut" in="offOut" stdDeviation="2"/>
+			<feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+		</filter>
+	</defs>
+	
+	<text x="10px" y="1em" style="font-size:36px; font-family:'One Fell Swoop'; fill:url(#grad1)" filter="url(#f1)">
+		Page Title
+	</text>
+</svg>

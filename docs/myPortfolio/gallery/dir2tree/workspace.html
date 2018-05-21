@@ -1,0 +1,250 @@
+<HTML><HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<TITLE>[workspace]ツリーリスト</TITLE>
+<STYLE TYPE="text/css">
+a:link	{text-decoration:none;}
+a:visited	{text-decoration:none;}
+a:active	{text-decoration:none;}
+a:hover	{text-decoration:none;}
+.system	{color: #bababa;}
+span	{font-family:wingdings;}
+div.tree	{
+	border: solid;
+	border-width: 0px 1px 1px 0px;
+	border-color: c0c0c0;
+	padding-right: 1em;
+	margin-right: 1em;
+	padding-bottom: 2px;
+	margin-bottom: 5px;
+}
+div.table	{
+	border: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: c0c0c0;
+	padding-right: 1em;
+	padding-bottom: 2px;
+}
+</STYLE>
+<SCRIPT TYPE="text/javascript"><!--
+if (document.all)
+	document.write('<style type="text/css"> .tree { display: none; }<'+'/style>');
+// ツリーメニュー フォルダ開閉
+function treeMenu(tName){
+	if(document.all){
+		tMenu=document.all(tName).style;
+		Icon=document.all("f_"+tName);
+	}else{
+		tMenu=document.getElementById(tName).style;
+		Icon=document.getElementById("f_"+tName);
+	}
+	if(tMenu.display=='block'){
+		tMenu.display="none";
+		Icon.innerHTML="0";
+	}else{
+		tMenu.display="block";
+		Icon.innerHTML="1";
+	}
+}
+// 全ツリー一括開閉
+function treeAllOpCl(D) {
+	var el=document.getElementsByTagName('DIV');
+	for (var i=0;i<el.length;i++){
+		if(el[i].className=='tree'){
+			if(D){
+				el[i].style.display = "block";
+			}else{
+				el[i].style.display = "none";
+			}
+		}
+	}
+	var el=document.getElementsByTagName('span');
+	for (var i=0;i<el.length;i++){
+		if(el[i].innerHTML==0 || el[i].innerHTML==1){
+			el[i].innerHTML=D;
+		}
+	}
+}
+// システムファイル項目の有無、チェックボックス表示判定
+function sysMenu(Id) {
+	var el=document.getElementsByTagName('A');
+	for (var i=0;i<el.length;i++){
+		if(el[i].className=='system'){
+			elem=document.all(Id).style;
+			elem.display = "block";
+			break;
+		}
+	}
+}
+// システムファイル表示OnOff
+function sysOnOff(D) {
+	var el=document.getElementsByTagName('A');
+	for (var i=0;i<el.length;i++){
+		if(el[i].className=='system'){
+			if(D){
+				el[i].style.display = "block";
+			}else{
+				el[i].style.display = "none";
+			}
+		}
+	}
+}
+// 連番リンク表示判定
+function PrNxDsp(str) {
+	str=str.substring(str.lastIndexOf('/',str.length) +1,str.lastIndexOf('.'));
+	if (str.match(/[0-9]+/)) {
+		for (var i=0;i<2;i++){
+			var el=document.getElementById("PrvNxt_" + i);
+			el.style.display = "block";
+		}
+		FileName = new Array(3);
+		FileName[0] = RegExp.leftContext
+		FileName[1] = RegExp.lastMatch
+		FileName[2] = RegExp.rightContext
+	}
+}
+// 連番リンク先指定、ジャンプ
+function PrNxLnk(num) {
+	var FileNum = FileName[1] - 0 + num
+	var Count = FileName[1].length - String(FileNum).length
+	for (var i=0;i<Count;i++){
+		FileNum = "0" + String(FileNum)
+	}
+	location.href = "./" + FileName[0] + FileNum + FileName[2] + ".html"
+}
+//--></SCRIPT></HEAD>
+<BODY bgcolor="#f3f3ff" onLoad="sysMenu('sysSelect');PrNxDsp(location.pathname)">
+Folder Path : C:\Users\Guest\workspace<br>
+Total Size  : <FONT color="#dda520">300.67 KByte</FONT><br>
+<DIV id="PrvNxt_0" align="center" style="display:none">
+<a href="javaScript:PrNxLnk(-1)">&lt;&lt;&nbsp;prev&nbsp;</a>　　　　　<a href="javaScript:PrNxLnk(1)">&nbsp;next&nbsp;&gt;&gt;</a></div>
+<HR size="1">
+<DIV id="sysSelect" style="display:none">
+<input type="radio"name="systemOnOff"onClick="javaScript:sysOnOff(1)"checked>システムファイルを表示<br>
+<input type="radio"name="systemOnOff"onClick="javaScript:sysOnOff(0)">システムファイルを非表示<br>
+</DIV><br>
+･全てのツリーを <input type="button"value=" 展開する "onclick="javaScript:treeAllOpCl(1)"> <input type="button"value=" 折りたたむ "onclick="javaScript:treeAllOpCl(0)"><br><br>
+<TABLE><DIV class="table">
+<A href="javaScript:treeMenu('treeMenu0')">　<span id="f_treeMenu0">1</span>workspace</a><br>
+<DIV id="treeMenu0" class="tree" style="display:block">
+　┗<A href="javaScript:treeMenu('treeMenu1')"><span id="f_treeMenu1">0</span>.metadata</a>　　　<FONT color="#dda520">300.67 KByte</FONT><br>
+<DIV id="treeMenu1" class="tree" style="display:none">
+　　　　┣<A href="javaScript:treeMenu('treeMenu1-1')"><span id="f_treeMenu1-1">0</span>.mylyn</a>　　　<FONT color="#6495ed">660.00 Byte</FONT><br>
+<DIV id="treeMenu1-1" class="tree" style="display:none">
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-1-1')"><span id="f_treeMenu1-1-1">0</span>.taskListIndex</a>　　　<FONT color="#6495ed">52.00 Byte</FONT><br>
+<DIV id="treeMenu1-1-1" class="tree" style="display:none">
+　　　　┃ 　┃ 　┣<span>3</span>segments.gen　　　<FONT color="#6495ed">20.00 Byte</FONT><br>
+　　　　┃ 　┃ 　┗<span>3</span>segments_1　　　<FONT color="#6495ed">32.00 Byte</FONT><br>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-1-2')"><span id="f_treeMenu1-1-2">0</span>contexts</a>　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+<DIV id="treeMenu1-1-2" class="tree" style="display:none">
+</DIV>
+　　　　┃ 　┣<span>3</span>repositories.xml.zip　　　<FONT color="#6495ed">358.00 Byte</FONT><br>
+　　　　┃ 　┗<span>3</span>tasks.xml.zip　　　<FONT color="#6495ed">250.00 Byte</FONT><br>
+</DIV>
+　　　　┣<A href="javaScript:treeMenu('treeMenu1-2')"><span id="f_treeMenu1-2">0</span>.plugins</a>　　　<FONT color="#dda520">299.41 KByte</FONT><br>
+<DIV id="treeMenu1-2" class="tree" style="display:none">
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-1')"><span id="f_treeMenu1-2-1">0</span>org.eclipse.cdt.core</a>　　　<FONT color="#6495ed">84.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-1" class="tree" style="display:none">
+　　　　┃ 　┃ 　┗<span>3</span>.log　　　<FONT color="#6495ed">84.00 Byte</FONT><br>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-2')"><span id="f_treeMenu1-2-2">0</span>org.eclipse.cdt.make.core</a>　　　<FONT color="#6495ed">2.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-2" class="tree" style="display:none">
+　　　　┃ 　┃ 　┣<span>3</span>specs.c　　　<FONT color="#6495ed">1.00 Byte</FONT><br>
+　　　　┃ 　┃ 　┗<span>3</span>specs.cpp　　　<FONT color="#6495ed">1.00 Byte</FONT><br>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-3')"><span id="f_treeMenu1-2-3">0</span>org.eclipse.core.resources</a>　　　<FONT color="#6495ed">798.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-3" class="tree" style="display:none">
+　　　　┃ 　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-3-1')"><span id="f_treeMenu1-2-3-1">0</span>.history</a>　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-3-1" class="tree" style="display:none">
+</DIV>
+　　　　┃ 　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-3-2')"><span id="f_treeMenu1-2-3-2">0</span>.root</a>　　　<FONT color="#6495ed">211.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-3-2" class="tree" style="display:none">
+　　　　┃ 　┃ 　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-3-2-1')"><span id="f_treeMenu1-2-3-2-1">0</span>.indexes</a>　　　<FONT color="#6495ed">59.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-3-2-1" class="tree" style="display:none">
+　　　　┃ 　┃ 　┃ 　┃ 　┣<span>3</span>history.version　　　<FONT color="#6495ed">1.00 Byte</FONT><br>
+　　　　┃ 　┃ 　┃ 　┃ 　┣<span>3</span>properties.index　　　<FONT color="#6495ed">57.00 Byte</FONT><br>
+　　　　┃ 　┃ 　┃ 　┃ 　┗<span>3</span>properties.version　　　<FONT color="#6495ed">1.00 Byte</FONT><br>
+</DIV>
+　　　　┃ 　┃ 　┃ 　┗<span>3</span>1.tree　　　<FONT color="#6495ed">152.00 Byte</FONT><br>
+</DIV>
+　　　　┃ 　┃ 　┗<A href="javaScript:treeMenu('treeMenu1-2-3-3')"><span id="f_treeMenu1-2-3-3">0</span>.safetable</a>　　　<FONT color="#6495ed">587.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-3-3" class="tree" style="display:none">
+　　　　┃ 　┃ 　　　　┗<span>3</span>org.eclipse.core.resources　　　<FONT color="#6495ed">587.00 Byte</FONT><br>
+</DIV>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-4')"><span id="f_treeMenu1-2-4">0</span>org.eclipse.core.runtime</a>　　　<FONT color="#dda520">2.07 KByte</FONT><br>
+<DIV id="treeMenu1-2-4" class="tree" style="display:none">
+　　　　┃ 　┃ 　┗<A href="javaScript:treeMenu('treeMenu1-2-4-1')"><span id="f_treeMenu1-2-4-1">0</span>.settings</a>　　　<FONT color="#dda520">2.07 KByte</FONT><br>
+<DIV id="treeMenu1-2-4-1" class="tree" style="display:none">
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.cdt.ui.prefs　　　<FONT color="#6495ed">121.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.core.resources.prefs　　　<FONT color="#6495ed">42.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.debug.ui.prefs　　　<FONT color="#6495ed">165.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.jdt.ui.prefs　　　<FONT color="#6495ed">517.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.mylyn.context.core.prefs　　　<FONT color="#6495ed">62.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.mylyn.monitor.ui.prefs　　　<FONT color="#6495ed">97.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.team.cvs.ui.prefs　　　<FONT color="#6495ed">57.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.team.ui.prefs　　　<FONT color="#6495ed">69.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.ui.ide.prefs　　　<FONT color="#6495ed">169.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┣<span>3</span>org.eclipse.ui.prefs　　　<FONT color="#6495ed">48.00 Byte</FONT><br>
+　　　　┃ 　┃ 　　　　┗<span>3</span>org.eclipse.ui.workbench.prefs　　　<FONT color="#6495ed">777.00 Byte</FONT><br>
+</DIV>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-5')"><span id="f_treeMenu1-2-5">0</span>org.eclipse.debug.core</a>　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-5" class="tree" style="display:none">
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-6')"><span id="f_treeMenu1-2-6">0</span>org.eclipse.debug.ui</a>　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-6" class="tree" style="display:none">
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-7')"><span id="f_treeMenu1-2-7">0</span>org.eclipse.e4.workbench</a>　　　<FONT color="#dda520">292.09 KByte</FONT><br>
+<DIV id="treeMenu1-2-7" class="tree" style="display:none">
+　　　　┃ 　┃ 　┗<span>3</span>workbench.xmi　　　<FONT color="#dda520">292.09 KByte</FONT><br>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-8')"><span id="f_treeMenu1-2-8">0</span>org.eclipse.jdt.core</a>　　　<FONT color="#6495ed">104.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-8" class="tree" style="display:none">
+　　　　┃ 　┃ 　┣<span>3</span>invalidArchivesCache　　　<FONT color="#6495ed">4.00 Byte</FONT><br>
+　　　　┃ 　┃ 　┣<span>3</span>nonChainingJarsCache　　　<FONT color="#6495ed">4.00 Byte</FONT><br>
+　　　　┃ 　┃ 　┗<span>3</span>variablesAndContainers.dat　　　<FONT color="#6495ed">96.00 Byte</FONT><br>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-9')"><span id="f_treeMenu1-2-9">0</span>org.eclipse.jdt.ui</a>　　　<FONT color="#dda520">3.52 KByte</FONT><br>
+<DIV id="treeMenu1-2-9" class="tree" style="display:none">
+　　　　┃ 　┃ 　┣<span>3</span>dialog_settings.xml　　　<FONT color="#dda520">3.36 KByte</FONT><br>
+　　　　┃ 　┃ 　┣<span>3</span>OpenTypeHistory.xml　　　<FONT color="#6495ed">76.00 Byte</FONT><br>
+　　　　┃ 　┃ 　┗<span>3</span>QualifiedTypeNameHistory.xml　　　<FONT color="#6495ed">85.00 Byte</FONT><br>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-10')"><span id="f_treeMenu1-2-10">0</span>org.eclipse.mylyn.context.core</a>　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-10" class="tree" style="display:none">
+　　　　┃ 　┃ 　┗<A href="javaScript:treeMenu('treeMenu1-2-10-1')"><span id="f_treeMenu1-2-10-1">0</span>contexts</a>　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-10-1" class="tree" style="display:none">
+</DIV>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-11')"><span id="f_treeMenu1-2-11">0</span>org.eclipse.mylyn.tasks.ui</a>　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-11" class="tree" style="display:none">
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-12')"><span id="f_treeMenu1-2-12">0</span>org.eclipse.team.cvs.core</a>　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-12" class="tree" style="display:none">
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-13')"><span id="f_treeMenu1-2-13">0</span>org.eclipse.ui.ide</a>　　　<FONT color="#6495ed">128.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-13" class="tree" style="display:none">
+　　　　┃ 　┃ 　┗<span>3</span>dialog_settings.xml　　　<FONT color="#6495ed">128.00 Byte</FONT><br>
+</DIV>
+　　　　┃ 　┣<A href="javaScript:treeMenu('treeMenu1-2-14')"><span id="f_treeMenu1-2-14">0</span>org.eclipse.ui.intro</a>　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-14" class="tree" style="display:none">
+</DIV>
+　　　　┃ 　┗<A href="javaScript:treeMenu('treeMenu1-2-15')"><span id="f_treeMenu1-2-15">0</span>org.eclipse.ui.workbench</a>　　　<FONT color="#6495ed">652.00 Byte</FONT><br>
+<DIV id="treeMenu1-2-15" class="tree" style="display:none">
+　　　　┃ 　　　　┣<span>3</span>dialog_settings.xml　　　<FONT color="#6495ed">395.00 Byte</FONT><br>
+　　　　┃ 　　　　┗<span>3</span>workingsets.xml　　　<FONT color="#6495ed">257.00 Byte</FONT><br>
+</DIV>
+</DIV>
+　　　　┣<span>3</span>.lock　　　<FONT color="#6495ed">0.00 Byte</FONT><br>
+　　　　┣<span>3</span>.log　　　<FONT color="#6495ed">606.00 Byte</FONT><br>
+　　　　┗<span>3</span>version.ini　　　<FONT color="#6495ed">26.00 Byte</FONT><br>
+</DIV>
+</DIV>
+</DIV></TABLE>
+<br><HR size="1">
+<DIV id="PrvNxt_1" align="center" style="display:none">
+<a href="javaScript:PrNxLnk(-1)">&lt;&lt;&nbsp;prev&nbsp;</a>　　　　　<a href="javaScript:PrNxLnk(1)">&nbsp;next&nbsp;&gt;&gt;</a></div>
+<BR><BR><BR><BR>
+</BODY>
+</HTML>

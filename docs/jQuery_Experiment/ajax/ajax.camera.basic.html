@@ -1,0 +1,212 @@
+<!-- Dw 編集用一時リンク -->
+<link href='../plugins/camera/css/camera.css'> 
+<link href='../plugins/camera/scripts/jquery.mobile.customized.min.js'> 
+<link href='../plugins/camera/scripts/jquery.easing.1.3.js'> 
+<link href='../plugins/camera/scripts/camera.min.js'> 
+<!-- /Dw 編集用一時リンク -->
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script>$('#jquery-version').html('jQuery: v' + $.fn.jquery);</script>
+
+
+
+<!-- Camera is a Pixedelic free jQuery slideshow | Manuel Masia (designer and developer) --> 
+
+
+	<!--///////////////////////////////////////////////////////////////////////////////////////////////////
+	//
+	//		Styles
+	//
+	///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+	<link rel='stylesheet' id='camera-css'	href='plugins/camera/css/camera.css' type='text/css' media='all'> 
+	<style>
+		#main-ajax a {
+			color: #09f;
+		}
+		#main-ajax a:hover {
+			text-decoration: none;
+		}
+		#back_to_camera {
+			clear: both;
+			display: block;
+			height: 80px;
+			line-height: 40px;
+			padding: 20px;
+		}
+		#main-ajax .fluid_container {
+			margin: 0 auto;
+			max-width: 1000px;
+			width: 90%;
+		}
+	</style>
+ 
+
+
+<hgroup>
+<h2>a free jQuery slideshow</h2>
+<h1 class="heading-l">Camera.js</h1> 
+</hgroup>
+
+	<!--
+	<div id="back_to_camera">
+		<a href="http://www.pixedelic.com/plugins/camera/">&larr; Back to the Camera project</a>
+	</div><!-- #back_to_camera -->
+	
+	<div class="fluid_container">
+	
+		<!--<p>Pagination circles with the height relative to the width</p>-->
+		<div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+			<div data-thumb="plugins/camera/images/slides/thumbs/bridge.jpg" data-src="plugins/camera/images/slides/bridge.jpg">
+				<div class="camera_caption fadeFromBottom">
+					Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/leaf.jpg" data-src="plugins/camera/images/slides/leaf.jpg">
+				<div class="camera_caption fadeFromBottom">
+					It uses a light version of jQuery mobile, <em>navigate the slides by swiping with your fingers</em>
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/road.jpg" data-src="plugins/camera/images/slides/road.jpg">
+				<div class="camera_caption fadeFromBottom">
+					<em>It's completely free</em> (even if a donation is appreciated)
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/sea.jpg" data-src="plugins/camera/images/slides/sea.jpg">
+				<div class="camera_caption fadeFromBottom">
+					Camera slideshow provides many options <em>to customize your project</em> as more as possible
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/shelter.jpg" data-src="plugins/camera/images/slides/shelter.jpg">
+				<div class="camera_caption fadeFromBottom">
+					It supports captions, HTML elements and videos and <em>it's validated in HTML5</em> (<a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.pixedelic.com%2Fplugins%2Fcamera%2F&amp;charset=%28detect+automatically%29&amp;doctype=Inline&amp;group=0&amp;user-agent=W3C_Validator%2F1.2" target="_blank">have a look</a>)
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/tree.jpg" data-src="plugins/camera/images/slides/tree.jpg">
+				<div class="camera_caption fadeFromBottom">
+					Different color skins and layouts available, <em>fullscreen ready too</em>
+				</div>
+			</div>
+		</div><!-- #camera_wrap_1 -->
+
+		<!--<p>Thumbnails with fixed height</p>-->
+		<div class="camera_wrap camera_magenta_skin" id="camera_wrap_2">
+			<div data-thumb="plugins/camera/images/slides/thumbs/bridge.jpg" data-src="plugins/camera/images/slides/bridge.jpg">
+				<div class="camera_caption fadeFromBottom">
+					Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/leaf.jpg" data-src="plugins/camera/images/slides/leaf.jpg">
+				<div class="camera_caption fadeFromBottom">
+					It uses a light version of jQuery mobile, <em>navigate the slides by swiping with your fingers</em>
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/road.jpg" data-src="plugins/camera/images/slides/road.jpg">
+				<div class="camera_caption fadeFromBottom">
+					<em>It's completely free</em> (even if a donation is appreciated)
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/sea.jpg" data-src="plugins/camera/images/slides/sea.jpg">
+				<div class="camera_caption fadeFromBottom">
+					Camera slideshow provides many options <em>to customize your project</em> as more as possible
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/shelter.jpg" data-src="plugins/camera/images/slides/shelter.jpg">
+				<div class="camera_caption fadeFromBottom">
+					It supports captions, HTML elements and videos and <em>it's validated in HTML5</em> (<a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.pixedelic.com%2Fplugins%2Fcamera%2F&amp;charset=%28detect+automatically%29&amp;doctype=Inline&amp;group=0&amp;user-agent=W3C_Validator%2F1.2" target="_blank">have a look</a>)
+				</div>
+			</div>
+			<div data-thumb="plugins/camera/images/slides/thumbs/tree.jpg" data-src="plugins/camera/images/slides/tree.jpg">
+				<div class="camera_caption fadeFromBottom">
+					Different color skins and layouts available, <em>fullscreen ready too</em>
+				</div>
+			</div>
+		</div><!-- #camera_wrap_2 -->
+	</div><!-- .fluid_container -->
+	
+	<div style="clear:both; display:block; height:100px"></div>
+
+
+
+
+<!-- 
+alignment: 'center' //写真を表示する位置 topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
+autoAdvance: true //スライドアニメーションの自動スタート
+mobileAutoAdvance: true //スライドの自動スタートモバイル版
+barDirection: 'leftToRight' //ローダーのバーの進行方向　'leftToRight', 'rightToLeft', 'topToBottom', 'bottomToTop'
+barPosition: 'bottom'　//ローダーのバーの位置
+cols: 6 //エフェクト効果の列の数
+easing: 'easeInOutExpo' //イージングの変更
+fx: 'random' //スライドアニメーションのエフェクト　いっぱいあるので割愛します・・・
+gridDifference: 250
+height: '50%'
+hover: true //スライドにホバーするとアニメーションストップ
+imagePath: 'images/' //プラグイン関係の画像のパス
+loader: 'pie' //ローダーのタイプ  pie, bar, none
+loaderColor: '#eeeeee' ローダーの色
+loaderBgColor: '#222222'　ローダーの背景の色
+loaderOpacity: .8 //ローダーの透過度
+loaderPadding: 2 //ローダーのパディング
+loaderStroke: 7 //ローダーの線の太さ
+minHeight: '200px' //最小高さ
+navigation: true //次へ、前へのリンク有無
+navigationHover: true //ホバーでナビゲーションを表示、非表示
+mobileNavHover: true 
+opacityOnGrid: false
+overlayer: true
+pagination: true //スライドのページネーションの有無
+playPause: true //ストップボタンの有無
+pauseOnClick: true //スライドをクリックするとスライドショーを止める
+pieDiameter: 38 //ローダーの円のサイズ
+piePosition: 'rightTop' //ローダーの円の位置
+portrait: false //
+rows: 4 //エフェクト効果の行の数
+slicedCols: 12 //エフェクト効果スライスの列の数　
+slicedRows: 8　//エフェクト効果スライスの行の数　
+slideOn: 'random'
+thumbnails: false //サムネイルの有無
+time: 7000 //スライドの表示時間
+transPeriod: 1500 //スライドアニメーションの時間
+-->
+
+
+
+
+
+
+
+
+	<!--///////////////////////////////////////////////////////////////////////////////////////////////////
+	//
+	//		Scripts
+	//
+	///////////////////////////////////////////////////////////////////////////////////////////////////--
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>-->
+	<script type='text/javascript' src='plugins/camera/scripts/jquery.mobile.customized.min.js'></script>
+	<script type='text/javascript' src='plugins/camera/scripts/jquery.easing.1.3.js'></script>
+	
+	<script type='text/javascript' src='plugins/camera/scripts/camera.min.js'></script> 
+	
+	<script>
+	jQuery(function(){
+	
+	$('#main-ajax').ready(function() {
+	setTimeout(function(){
+		
+			jQuery('#camera_wrap_1').camera({
+				thumbnails: true
+			});
+	
+			jQuery('#camera_wrap_2').camera({
+				height: '400px',
+				loader: 'bar',
+				pagination: false,
+				thumbnails: true
+			});
+		
+	},500);
+	});
+	
+	});
+	</script>
+
+
