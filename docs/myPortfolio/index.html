@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+
+<!-- IEのバージョン別にhtmlクラス分け -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="jp"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="jp"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="jp"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="jp"> <!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+
+	<!-- DNS プリフェッチ -->
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<link rel="dns-prefetch" href="//ajax.googleapis.com/" />
+
+
+	<!-- ページ情報 -->
+	<title>h-oikawa&#039;s Portfolio Site</title>
+	<meta http-equiv="content-language" content="ja">
+	<meta name="author" content="h-oikawa" />
+	<meta name="description" content="h-oikawaの(旧)ポートフォリオサイトです。" />
+	<meta name="keywords" content="web design, portfolio, ウェブデザイン, ポートフォリオ" />
+
+	<!-- IE ブラウザ互換表示機能 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<!-- イメージツールバー非表示 -->
+	<meta http-equiv="imagetoolbar" content="no" />
+
+
+	<!-- viewport、表示倍率固定 --> 
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1" />
+
+
+	<!-- キャッシュ拒否 --> 
+	<meta name="robots" content="noarchive" />
+
+
+	<!-- iPhone用アイコン指定 -->
+	<link rel="apple-touch-icon" href="img/icon/touch-icon-iphone.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="img/icon/touch-icon-ipad.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="img/icon/touch-icon-iphone4.png" />
+
+	<!-- Favicon指定 -->
+	<link rel="icon" href="img/icon/favicon.png" />
+	<!--[if IE]><link rel="shortcut icon" href="img/icon/favicon.ico" /><![endif]-->
+	<meta name="msapplication-TileColor" content="#336666" />
+	<meta name="msapplication-TileImage" content="img/icon/tile-icon.png" />
+
+
+	<!-- CSS読み込み -->
+	<!--<link rel="stylesheet" type="text/css" href="css/normalize.min.css">-->
+
+	<!-- Bootstrap CSS CDN --
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.Slate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-responsive.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/modalbox/jquery.modalbox.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+	<!-- IE対策 -->
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<!-- Modernizr --
+	<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
+	<script src="js/vendor/modernizr.custom.min.js"></script>
+	<link rel="contents" href="" title="サイトマップ等" />
+
+</head>
+
+<body id="top">
+<!--[if lt IE 10]>
+	<div class="chromeframe alert alert-info container text-center">
+		<a class="close">&times;</a>
+		<p><strong class="label label-warning" style="margin: 10px 20px">Caution</strong>※ご使用中の Internet Explorer は最新ではありません。<br>このページを正常に閲覧するにはブラウザを<a href="http://browsehappy.com/">アップデート</a>するか <a href="http://www.google.com/chromeframe/?redirect=true">Google Chrome Frame</a> を有効にして下さい。</p>
+	</div>
+<![endif]-->
+
+<!-- ==================== header ==================== -->
+<header id="header">
+	<div class="row container centering">
+		<div class="span4">
+			<h1>h-oikawa&#039;s Portfolio Site</h1>
+			<div id="backLogo">
+				<embed src="img/bgLogo.svg" type="image/svg+xml" alt="Site Logo" />
+			</div>
+		</div>
+		<div class="span8 bsa well">
+			<p class="lead">ここは <a href="https://me.h-oikawa.jp">h-oikawa</a> が学生時代に作成した(旧)ポートフォリオサイトです。</p>
+		</div>
+	</div><!--/.row -->
+
+	<nav id="navbar" class="navbar navbar-fixed-top">
+		<div id="navbarInner" class="navbar-inner">
+			<!-- アイテムコンテナ、センタリング -->
+			<div class="container centering">
+				<!-- Navi ＝ ページ遷移メニュー -->
+				<div id="pageNav" class="nav dropdown">
+					<a href="#" class="brand dropdown-toggle" data-toggle="dropdown"><h2>Navi <span class="caret"></span></h2></a>
+					<ul id="pageNavMenu" class="dropdown-menu SmoothScroll">
+						<li><a class="btn" href="#top"><span>Top</span></a></li>
+						<li><a class="btn" onClick="history.back(); return false;"><span>Prev</span></a></li>
+						<li><a class="btn" onClick="history.forward(); return false;"><span>Next</span></a></li>
+						<li><a class="btn" href="#footer"><span>End</span></a></li>
+					</ul>
+				</div>
+
+
+				<!-- 検索ボックス -->
+				<form id="siteSearch" class="navbar-search form-search pull-right" method="get" action="https://www.google.co.jp/search">
+					<input type="hidden" name="ie" value="utf-8">
+					<input type="hidden" name="oe" value="utf-8">
+					<input type="hidden" name="hl" value="ja">
+					<input type="hidden" name="sitesearch" value="">
+					<div class="input-append" id="appendedSearchBar">
+						<input type="text" name="q" class="search-query span2" maxlength=255 placeholder="Google検索">
+						<button type="submit" name="btnG" class="btn btn-small"><i class="icon-search icon-white"></i></button>
+					</div>
+				</form>
+
+
+
+				<!-- 縮小表示時のメニューボタン -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</a><!--/.btn-navbar -->
+
+				<!-- 縮小表示時ボタン内格納メニュー -->
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="divider-vertical"></li>
+						<li>
+							<a href="index.html">
+								<i class="icon-home icon-white"></i> Home
+							</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="icon-picture icon-white"></i> Gallery <b class="caret"></b>
+							</a>
+							<ul id="galleryMenu" class="dropdown-menu">
+								<li><a href="gallery.html" class="nav-header">Gallery</a></li>
+								<li class="divider"></li>
+								<li><a href="gallery.html#tab1">Illustrations</a></li>
+								<li><a href="gallery.html#tab2">Photographys</a></li>
+								<li><a href="gallery.html#tab3">Page Design</a></li>
+								<li><a href="gallery.html#tab4">Script Programs</a></li>
+								<li><a href="gallery.html#tab5">Web Site</a></li>
+							</ul>
+						</li>
+						<li class="divider-vertical"></li>
+					</ul>
+					<ul class="nav pull-right">
+						<li class="divider-vertical"></li>
+						<li>
+							<a href="https://me.h-oikawa.jp"><i class="icon-info-sign icon-white"></i> About Me</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com/oikawa.hiroyuki.9" target="_blank">
+								<i class="icon-user icon-white"></i> Facebook
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/Qkanshi">
+								<i class="icon-bookmark icon-white"></i> Twitter
+							</a>
+						</li>
+						<li>
+							<a href="mailto:contact@h-oikawa.jp">
+								<i class="icon-envelope icon-white"></i> Contact
+							</a>
+						</li>
+						<li class="divider-vertical"></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+
+			</div><!--/.container -->
+		</div><!--/.navbar-inner -->
+	</nav>
+</header>
+<!-- ==================== /header ==================== -->
+
+<!-- パンくずリスト -->
+<ul class="breadcrumb">
+	<li><span class="divider">&gt;</span></li>
+	<li class="active">Home</li>
+</ul>
+
+
+
+<!-- ==================== Main Contents ==================== -->
+<div id="mainContents">
+	<div class="container">
+
+
+		<section class="hero-unit">
+			<!--<h1>Hello, world!</h1>-->
+			<h2>PickUp, My Works!</h2>
+
+			<!-- Slider Row -->
+			<div class="row-fluid" id="slider">
+				<!-- Top part of the slider -->
+				<div class="span8" id="carousel-bounding-box">
+					<div id="myCarousel" class="carousel slide">
+						<!-- Carousel items -->
+						<div class="carousel-inner">
+							<div class="active item" data-slide-number="0"><img src="img/carousel/fugaku-trace.jpg" /></div>
+							<div class="item" data-slide-number="1"><img src="img/carousel/WinShortcut.jpg" /></div>
+							<div class="item" data-slide-number="2"><img src="img/carousel/scrShot_jq.jpg" /></div>
+							<div class="item" data-slide-number="3"><img src="img/carousel/scrShot_brg.jpg" /></div>
+							<div class="item" data-slide-number="4"><img src="img/carousel/real-trace.png" /></div>
+						</div>
+						<!-- Carousel nav -->
+						<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+						<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+					</div>
+				</div>
+
+				<!-- Toggle Text about the Slide -->
+				<div class="span4" id="carousel-text">このタグの中身はJavaScriptによって"#slide-content-x"の内容に書き換えられます。</div>
+
+				<!-- Slide Contents -->
+				<div style="display: none;" id="slide-content">
+					<section id="slide-content-0">
+						<h3>Illustrator 画像トレース</h3>
+						<p>葛飾北斎：富嶽三十六景<br>
+							＜甲州三坂水面＞</p>
+						<p class="sub-text">2013 Feb. 10 - 15 <br>
+							<a class="btn" href="gallery.html#tab1">View Gallery &raquo;</a></p>
+					</section>
+					<section id="slide-content-1">
+						<h3>Shortcut Wallpaper</h3>
+						<p>Windows ショートカット一覧の壁紙</p>
+						<p class="sub-text">2013 Mar. 09 - 13 <br>
+							<a class="btn" href="gallery.html#tab2">View Gallery &raquo;</a></p>
+					</section>
+					<section id="slide-content-2">
+						<h3>jQuery Experiment</h3>
+						<p>Ajax & jQuery プラグイン 導入練習サイト</p>
+						<p class="sub-text">2013 Apr. 20 - May 30 <br>
+							<a class="btn" href="../jQuery_Experiment" target="_blank">Visit &raquo;</a></p>
+					</section>
+					<section id="slide-content-3">
+						<h3>PHOTO GALLERY</h3>
+						<p>画像表示 jQuery プラグイン のテストサイト</p>
+						<p class="sub-text">2013 Apr. 20 - May 30 </p>
+					</section>
+					<section id="slide-content-4">
+						<h3>リアルトレース</h3>
+						<p>腕時計の画像をグラデーションメッシュでトレース</p>
+						<p class="sub-text">2013 Jan. 17 - Feb. 15 <br>
+							<a class="btn" href="gallery.html#tab1">View Gallery &raquo;</a></p>
+					</section>
+				</div><!-- /Slide Contents -->
+
+			</div><!-- /Slider Row -->
+
+
+			<!-- Slider Thumbnails -->
+			<div class="row-fluid hidden-phone" id="slider-thumbs">
+				<div class="span10">
+					<!-- Bottom switcher of slider -->
+					<ul class="thumbnails">
+						<li class="span2">
+							<a class="thumbnail" id="carousel-selector-0">
+								<img class="img-circle" src="img/carousel/fugaku-trace.jpg" />
+							</a>
+						</li>
+						<li class="span2">
+							<a class="thumbnail" id="carousel-selector-1">
+								<img class="img-circle" src="img/carousel/WinShortcut.jpg" />
+							</a>
+						</li>
+						<li class="span2">
+							<a class="thumbnail" id="carousel-selector-2">
+								<img class="img-circle" src="img/carousel/scrShot_jq.jpg" />
+							</a>
+						</li>
+						<li class="span2">
+							<a class="thumbnail" id="carousel-selector-3">
+								<img class="img-circle" src="img/carousel/scrShot_brg.jpg" />
+							</a>
+						</li>
+						<li class="span2">
+							<a class="thumbnail" id="carousel-selector-4">
+								<img class="img-circle" src="img/carousel/real-trace.png" />
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div><!-- /Slider Thumbnails -->
+
+		</section><!-- /.hero-unit -->
+
+
+		<!-- row of columns -->
+		<div class="row">
+			<section class="span7 well">
+				<h2>Bootstrap について</h2>
+				<p>このサイトは Twitter社の Bootstrap を使用して作成しています。</p>
+				<p><a class="btn btn-info" href="http://twitter.github.com/bootstrap/">Read more &raquo;</a></p>
+			</section>
+		</div>
+
+	</div> <!--/.container -->
+</div>
+<!-- ==================== /Main Contents ==================== -->
+
+
+
+
+<hr>
+<!-- ==================== footer ==================== -->
+<footer id="footer">
+	<div class="container row-fluid">
+		<div class="nav links">
+			<a href="index.html">Home</a>
+			<a href="gallery.html">Gallery</a>
+		</div>
+
+
+		<div class="pull-right text-right">
+			Based on <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> Framework.<br>
+			Icons from <a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a>.<br>
+			Web fonts from <a href="http://www.google.com/webfonts">Google</a>.</p>
+		</div>
+
+
+		<p id="copyright">Copyright &copy; 2012-2015 h-oikawa All Rights Reserved.</p>
+	</div> <!--/.container -->
+</footer>
+<!-- ==================== /footer ==================== -->
+
+</body>
+
+<!-- 外部スクリプトの読み込み --
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+<!--<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>-->
+<script>if(!$.fn.alert) document.write('<script src="js/bootstrap/bootstrap.min.js"><\/script>')</script>
+
+<script src="js/modalbox/jquery.modalbox-1.5.0-min.js"></script>
+
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+
+</html>

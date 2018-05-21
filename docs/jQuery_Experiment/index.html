@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="jp"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="jp"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="jp"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="jp"> <!--<![endif]-->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>jQuery プラグイン 導入・運用テスト</title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/font-awesome/font-awesome.css">
+	
+	
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+
+	<!--<script src="js/modernizr.js"></script>-->
+    <script src="js/modernizr.custom.min.js"></script>
+	
+    <!--[if lt IE 9]>
+        <script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<!--<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>-->
+	<script id="jquery" type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	
+
+	<script type="text/javascript" src="plugins/sly/js/plugins.js"></script>
+	
+	<script type="text/javascript" src="plugins/sly/js/sly.js"></script>
+	<script type="text/javascript" src="plugins/sly/js/sly.my.js"></script>
+	
+	<script type="text/javascript" src="js/custom.js"></script>
+
+
+
+	
+</head>
+
+<body>
+
+<div id="container" class="center">
+
+<div id="nav-wrap">
+
+	<div id="sub-link-bar">
+	
+		<div id="example" class="pagespan">
+			<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+
+			<button class="backward"><i class="icon-angle-left"></i></button>
+			<button class="forward"><i class="icon-angle-right"></i></button>
+
+			<div class="frame">
+				<ul id="slyItems">
+					<li style="background-image:url(assets/thumbs/RefineSlide.jpg)"><a class="mainAjax" href="ajax/ajax.RefineSlide.html"><i class="icon-fire"></i></a></li>
+					<li style="background-image:url(assets/thumbs/gridster.jpg)"><a class="mainAjax" href="ajax/ajax.gridster.html"><i class="icon-star"></i></a></li>
+					<li style="background-image:url(assets/thumbs/transit.test.jpg)"><a class="mainAjax" href="ajax/ajax.transit.test.html"><i class="icon-th-large"></i></a></li>
+					<li style="background-image:url(assets/thumbs/OutsideTheBox.jpg)"><a class="mainAjax" href="ajax/ajax.OutsideTheBox.html"><i class="icon-briefcase"></i></a></li>
+					<li style="background-image:url(assets/thumbs/stairway.jpg)"><a class="mainAjax" href="ajax/ajax.stairway.html"><i class="icon-indent-right"></i></a></li>
+					<li style="background-image:url(assets/thumbs/camera.jpg)"><a class="mainAjax" href="ajax/ajax.camera.basic.html"><i class="icon-camera-retro"></i></a></li>
+					<li><i class="icon-cloud"></i></li><li><i class="icon-leaf"></i></li>
+					<li><a href="plugins/BigVideo/example-playlist.html"><i class="icon-desktop"></i></a></li>
+					<li><i class="icon-heart"></i></li><li><i class="icon-warning-sign"></i></li>
+				</ul>
+			</div>
+
+			<div class="controls">
+				<button data-action="toStart"><i class="icon-double-angle-left"></i> Start</button>
+				<span class="divider"></span>
+				<button class="prev"><i class="icon-angle-left"></i> Prev</button>
+				<span class="divider"></span>
+				<button data-action="add"><i class="icon-plus-sign"></i></button>
+				<button data-action="remove"><i class="icon-minus-sign"></i></button>
+				<span class="divider"></span>
+				<button class="next">Next <i class="icon-angle-right"></i></button>
+				<span class="divider"></span>
+				<button data-action="toEnd">End <i class="icon-double-angle-right"></i></button>
+			</div>
+		</div>
+
+	</div><!-- End sub-link-bar -->
+
+	<div id="main-handle" class="tcenter">
+		<div ="nav-bg">
+		<ul id="main-nav">
+			<li><a class="main-link mainAjax" href="ajax/ajax.RefineSlide.html" index="0">RefineSlide</a></li>
+			<li><a class="main-link mainAjax" href="ajax/ajax.gridster.html" index="1">Gridster</a></li>
+			<li><a class="main-link mainAjax" href="ajax/ajax.transit.test.html" index="2">Transit</a></li>
+			<li><a class="main-link mainAjax" href="ajax/ajax.OutsideTheBox.html" index="3">Outside the Box</a></li>
+			<li><a class="main-link mainAjax" href="ajax/ajax.stairway.html" index="4">Stairway</a></li>
+			<li><a class="main-link mainAjax" href="ajax/ajax.camera.basic.html" index="5">Camera</a></li>
+			
+			<li><a class="main-link" href="plugins/BigVideo/example-playlist.html" index="8">BigVideo</a></li>
+			
+			<li><a class="toggle" rel="down" title="toggle" href="javascript:void(0);"><i id="iconArrow" class="icon-arrow-down"></i></a></li>
+		</ul>
+		</div><!-- End roundfg -->
+		
+		<!--<b class="round"> <b class="round5"></b> <b class="round4"></b> <b class="round3"></b> <b class="round2"><b></b></b> <b class="round1"><b></b></b></b>-->
+	</div><!-- End main-handle-->
+
+</div><!-- End nav-wrap -->
+
+
+
+<div id="main-ajax" class="center hide clearfix">
+</div><!-- End main-ajax -->
+
+
+
+</div><!-- End container -->
+
+<p class='version tcenter' id='jquery-version'></p>
+
+
+</body>
+</html>

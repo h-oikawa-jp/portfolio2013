@@ -1,0 +1,163 @@
+<!-- /Dw 編集用一時リンク -->
+<link href="../plugins/RefineSlide/css/refineslide.my.css" />
+<link href="../plugins/RefineSlide/css/refineslide.css" />
+<!-- /Dw 編集用一時リンク -->
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script>$('#jquery-version').html('jQuery: v' + $.fn.jquery);</script>
+
+
+
+<link rel="stylesheet" href="plugins/RefineSlide/css/reset.css" />
+<link rel="stylesheet" href="plugins/RefineSlide/css/refineslide.my.css" />
+<link rel="stylesheet" href="plugins/RefineSlide/css/refineslide.css" />
+<link rel="stylesheet" href="plugins/RefineSlide/css/refineslide-theme-dark.css" />
+
+
+
+<div class="wrap group">
+	<div class="group">
+		<h1 class="title">RefineSlide</h1>
+
+		<!--<div id="top-buttons" class="group">
+			<a id="download" href="https://github.com/alexdunphy/refineslide/zipball/master">Download</a>
+			<a id="github" href="https://github.com/alexdunphy/refineslide/">Github</a>
+		</div>-->
+	</div>
+</div>
+
+<div class="topline"></div>
+
+<div class="group section-wrap upper" id="upper">
+	<div class="wrap group">
+		<div class="section-1">
+			<h2 class="subtitle">Transitions</h2>
+
+			<ul id="legend">
+				<li>
+					<span class="bobble bobble-key">TYPE</span>
+					- 正常に動作します
+				</li>
+				<li>
+					<span class="bobble bobble-key unsupported">TYPE</span>
+					- ご使用のブラウザではサポートされていません
+				</li>
+			</ul>
+
+			<ul class="translist group">
+				<li><a href="#_fade" class="button">Fade<div class="bobble-css bobble-js">CSS</div></a></li>
+				<li><a href="#_random" class="button">Random<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_sliceH" class="button">Slice horizontal<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_sliceV" class="button">Slice vertical<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_slideH" class="button">Slide horizontal<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_slideV" class="button">Slide vertical<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_scale" class="button">Scale<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_fan" class="button">Fan<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_blockScale" class="button">Block scale<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_kaleidoscope" class="button">Kaleidoscope<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_blindH" class="button">Blind horizontal<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_blindV" class="button">Blind Vertical<div class="bobble-css">CSS</div></a></li>
+				<li><a href="#_cubeH" class="button">Cube horizontal<div class="bobble-3d">3D</div></a></li>
+				<li><a href="#_cubeV" class="button">Cube vertical<div class="bobble-3d">3D</div></a></li>
+			</ul>
+		</div> <!-- /.section-1 -->
+
+		<div class="section-2 group">
+			<ul id="images" class="rs-slider">
+				<li class="group">
+					<a href="#" class="slide-parent">
+						<img src="assets/menu/pasta01.jpg" alt="" style="height:486px;" />
+					</a>
+					<div class="rs-caption rs-bottom-left">
+						<h3>パスタ</h3>
+						<p>Caption Bottom Left</p>
+					</div>
+				</li>
+				<li class="group">
+					<a href="#" class="slide-parent">
+						<img src="assets/menu/dinner.jpg" alt="" style="height:486px;" />
+					</a>
+					<div class="rs-caption rs-top-right">
+						<h3>ディナー</h3>
+						<p>Caption Top Right</p>
+					</div>
+				</li>
+				<li class="group">
+					<a href="#" class="slide-parent">
+						<img src="assets/menu/mabo.jpg" alt="" style="height:486px;" />
+					</a>
+					<div class="rs-caption rs-top-left">
+						<h3>麻婆豆腐</h3>
+						<p>Caption Top Left</p>
+					</div>
+				</li>
+				<li class="group">
+					<a href="#" class="slide-parent">
+						<img src="assets/menu/sweet03.jpg" alt="" style="height:486px;" />
+					</a>
+					<div class="rs-caption rs-bottom">
+						<h3>ケーキ</h3>
+						<p>Caption Bottom <a href="#" class="button">more</a></p>
+					</div>
+				</li>
+				<li class="group">
+					<a href="#" class="slide-parent">
+						<img src="plugins/BigVideo/img/background-dock.jpg" alt="" style="height:486px;" />
+					</a>
+				</li>
+			</ul>
+		</div> <!-- /.section-2 -->
+	</div> <!-- /.wrap -->
+</div> <!-- /#upper -->
+
+
+
+
+
+
+
+
+
+<script src="plugins/RefineSlide/js/jquery.refineslide.js"></script>
+<script>
+	$(function () {
+	//$('#main-ajax').ready(function() {
+		
+		var $upper = $('#upper');
+
+		$('#images').refineSlide({
+			transition : 'fade',
+			onInit : function () {
+				var slider = this.slider,
+				   $triggers = $('.translist').find('> li > a');
+
+				$triggers.parent().find('a[href="#_'+ this.slider.settings['transition'] +'"]').addClass('active');
+
+				$triggers.on('click', function (e) {
+				   e.preventDefault();
+
+					if (!$(this).find('.unsupported').length) {
+						$triggers.removeClass('active');
+						$(this).addClass('active');
+						slider.settings['transition'] = $(this).attr('href').replace('#_', '');
+					}
+				});
+
+				function support(result, bobble) {
+					var phrase = '';
+
+					if (!result) {
+						phrase = ' not';
+						$upper.find('div.bobble-'+ bobble).addClass('unsupported');
+						$upper.find('div.bobble-js.bobble-css.unsupported').removeClass('bobble-css unsupported').text('JS');
+					}
+				}
+
+				support(this.slider.cssTransforms3d, '3d');
+				support(this.slider.cssTransitions, 'css');
+			}
+		});
+	
+	//});
+	});
+</script>
