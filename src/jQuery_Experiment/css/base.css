@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+
+
+/* =============================================================================
+   COMMONS
+========================================================================== */
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+    background-color: #EEEEEE;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: smaller;
+    color: snow;
+	
+	//background: url(body.png) center no-repeat;
+}
+
+a {
+    color: #004756;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 960px;
+}
+
+
+ul { list-style: none; }
+
+
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tcenter {
+	text-align: center;
+}
+
+
+
+.clearfix:after {
+	content: ""; 
+	display: block; 
+	clear: both;
+}
+
+
+.hide {
+	display: none;
+}
+
+
+
+
+
+
+/* Heading Size */
+.heading-xl,
+.heading-l,
+.heading-m {
+    color: #333333;
+    text-shadow: 1px 0 0 #FFF;
+    padding-bottom: .5em;
+}
+
+.heading-xl {
+    font-size: 3em;
+    padding:2em 0 1em;
+}
+
+.heading-l {
+    font-size: 2.6em;
+}
+
+.heading-m {
+    font-size: 2.2em;
+    color: #999999;
+}
+
+.heading-m em {
+    color: #666;
+    font-weight: normal;
+    font-size: .8em;
+}
+
+
+
+
+
+/* Section Text */
+section header,
+.scoped {
+    margin: 0 38px;
+}
+
+section header .m_txt{
+    margin-top: -2.5em;
+    padding: 0 0 25px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+

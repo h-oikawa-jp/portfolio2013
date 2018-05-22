@@ -1,0 +1,306 @@
+@charset "utf-8";
+
+/* =======================================
+	エレメント基本設定
+======================================= */
+body {
+	font: 100%/1.4 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+	background: #CCC;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+ul, ol, dl {
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+a img {
+	border: none;
+}
+a:link {
+	color: #42413C;
+	text-decoration: none;
+}
+a:visited {
+	color: #6E6C64;
+}
+a:hover, a:active, a:focus {
+	text-decoration: underline;
+}
+
+/* HTML 5 サポート */
+header, section, footer, aside, nav, article, figure {
+	display: block;
+}
+
+
+
+/* =======================================
+	実コンテンツ設定
+======================================= */
+/* 全体コンテナ */
+.container {
+	width: 1000px;
+	background: #FFFFFF;
+	margin: 0 auto;
+}
+/* ヘッダ */
+header {
+	height: 112px;
+	//text-align:center;
+	//border-top: 10px solid #078;
+	border-bottom: 6px solid #078;
+	background-color: #0FC;
+	background-image: url(../img/header.png);
+	background-position: -200px -150px;
+	//background-position-x: -200px;
+	//background-position-y: -150px;
+}
+header h1 {
+	display:inline-block;
+	font-size: 52px;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	font-style: italic;
+	font-weight: bold;
+	line-height:77px;
+}
+header p {
+	display:inline-block;
+	font-size:12px;
+}
+/* ナビゲーション */
+nav {
+	margin: 0 auto;
+	width:900px;
+}
+nav ul {
+	list-style: none;
+	//border-top: 1px solid #666;
+	margin: 0 auto -1px auto;
+	text-align:center;
+}
+nav ul li {
+	display: inline-block; /* リストをインラインブロックで一列に */
+	font-weight: bold;
+}
+nav ul a, nav ul a:link, nav ul a:visited { /* リンクボタン設定 */
+	padding: 5px 15px 5px 15px;
+	display: block; /* リンクのクリック範囲をブロック化 */
+	width: 100px; /* ナビゲーションアイテムの幅 */
+	color: snow;
+	
+	border:groove;
+	border-bottom:none;
+	background: #078;
+	/* CSS3 */
+	background: -moz-linear-gradient(top, rgba(200,200,200,0.8), #078);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(200,200,200,0.8)), to(#078));
+	border-radius: 15px 15px 2px 2px;
+}
+nav ul a:hover, nav ul a:active, nav ul a:focus, nav ul a.here { /* マウスオーバー設定,キーボードにも対応 */
+	background: silver;
+	/* CSS3 */
+	background: -moz-linear-gradient(top, rgba(100,100,100,0.7), #078);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(100,100,100,0.7)), to(#078));
+}
+
+
+/* キービジュアル */
+#keyVisual {
+	width: 920px;
+	height: 240px;
+	margin: 30px auto;
+	position: relative;
+	cursor: pointer;
+}
+#keyVisual > * {
+	position: absolute; /* バックの画像とスライダー領域を重ねる */
+}
+#keyVisual img#keyBack {
+	width:920px; /* バック画像の大きさ */
+	height: 240px;
+}
+.loopslider {
+	margin: 0 auto;
+	width: 920px;
+	height: 240px;
+	text-align: left;
+	//position: relative;
+	overflow: hidden;
+}
+.loopslider ul {
+	list-style: none;
+	//height: 240px;
+	float: left;
+	display: inline;
+	overflow: hidden;
+}
+.loopslider ul li {
+	//width: 100px;
+	//height: 240px;
+	float: left;
+	display: inline;
+	overflow: hidden;
+}
+.loopslider img {
+	//width: 400px;
+	height: 240px; /* 画像の大きさ（#keyVisual内の他のheightを全て同じに） */
+}
+/* =======================================
+	ClearFixElements
+======================================= *
+.loopslider ul:after {
+	//content: ".";
+	//height: 0;
+	clear: both;
+	display: block;
+	visibility: hidden;
+}
+.loopslider ul {
+	display: inline-block;
+	overflow: hidden;
+}*/
+
+
+
+/* メインコンテンツ */
+.content {
+	margin-bottom:20px;
+	padding: 0 10px;
+	width: 780px;
+	float: left;
+}
+.content article {
+	//background:#aaF;
+	margin: 10px;
+	padding: 4px;
+}
+.content article h1 {
+	margin: 10px;
+	border-bottom-style: groove;
+	border-left-style: groove;
+	border-left-width: 5px;
+}
+/* 更新情報 */
+#whatsNew {
+}
+#whatsNew iframe {
+	width:700px;
+	height:170;
+	margin-left: 20px;
+}
+/* バリ島とは */
+#aboutBali {
+}
+#aboutBali p {
+	display:inline-block;
+	width:300px;
+	margin:0;
+}
+#googleMap {
+	display:inline-block;
+}
+#googleMap iframe {
+	width:400px;
+	height:300px;
+	frameborder:0;
+	scrolling:no;
+	marginheight:0;
+	marginwidth:0;
+}
+/* スポットピックアップ */
+#spotPickUp {
+}
+#spotPickUp > div {
+	float:left;
+	width:250px;
+	margin: 0 -5px 0 5px;
+	//padding: 5px 10px 10px 20px;
+}
+#spotPickUp img {
+	width:240px;
+	height:160px;
+}
+#spotPickUp p {
+	clear:both;
+}
+/* ご注意・お知らせ */
+#caution ul {
+	margin-left:50px;
+}
+
+
+
+/* 観光スポット(spot.html) */
+#spot {
+}
+#spot h2 {
+	width:180px;
+	margin-bottom:-10px;
+}
+#spot p {
+	float:right;
+	width:515px;
+	margin: -10px -5px 10px -20px;
+}
+#spot a {
+	float:left;
+	margin:15px;
+}
+#spot img {
+	width:200px;
+	height:auto;
+}
+#spot hr {
+	width:95%;
+}
+
+
+
+
+/* サイドバー */
+.sidebar {
+	//background: #CFF;
+	float: left;
+	width: 180px;
+	margin-top: 20px;
+}
+#menu ul {
+	list-style: none;
+	border-top: 1px solid #666;
+	margin-bottom: 15px;
+}
+#menu ul li {
+	border-bottom: 1px solid #666; /* ボタンの区切り線 */
+}
+#menu ul a, #menu ul a:visited {
+	padding: 5px 5px 5px 15px;
+	display: block;
+	width: 160px;
+	text-decoration: none;
+	background: #0ac;
+}
+#menu ul a:hover, #menu ul a:active, #menu ul a:focus {
+	background: #069;
+	color: #FFF;
+}
+aside {
+	border-top:solid 1px;
+	padding: 10px 0 10px 0;
+}
+
+
+
+/* フッター */
+footer {
+	clear: both;
+	padding: 10px 0 20px 0;
+	background: #099;
+	position: relative;/* IE6 に、適切にクリアするための hasLayout を指定 */
+	text-align:center;
+}
