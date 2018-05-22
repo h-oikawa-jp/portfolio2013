@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/* =============================================================================
+   Gridster Main CSS
+========================================================================== */
+@import url(jquery.gridster.css);
+/*@import url(jquery.gridster.min.css);*/
+
+@import url(gridster.options.css);
+
+
+
+/* =======================================
+	ヘッダ
+======================================= */
+[role='header'] {
+    padding-top: 78px;
+    text-align: center;
+    background: #FFF;
+}
+
+.logo,
+.logo-small {
+    display: inline-block;
+    text-indent: -999em;
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+}
+
+.logo {
+    width: 300px;
+    height: 100px;
+    background-position:20px top;
+}
+
+
+.logo-small {
+    width: 200px;
+    height: 60px;
+    background-position: 14px -110px;
+}
+
+
+
+[role='header'] .claim {
+    font-size: 2em;
+    font-style: italic;
+    font-weight: normal;
+
+    margin-top: -20px;
+    padding-bottom: 60px;
+}
+
+/*
+[role='header'] nav li,
+[role='header'] nav a {
+    display: inline-block;
+}
+
+[role='header'] nav a {
+    padding: .6em 1.3em;
+    background: #F6F6F6;
+    font-size: 2em;
+    text-decoration: none;
+    color: #666666;
+    background-color: #F6F6F6;
+    font-weight: bold;
+    background-color: #EEEEEE;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+}
+
+[role='header'] nav a:hover {
+    color: #333;
+}
+
+[role='header'] nav .active {
+    background-color: #EEEEEE;
+}
+
+[role='header'] nav .active a {
+    color: #333333;
+}
+*/
+
+
+
+/* =======================================
+	フッタ
+======================================= */
+[role='footer'] {
+    margin-top: 70px;
+    background: #004756;
+    padding-top: 1em;
+    text-align: center;
+}
+
+[role='footer'] > p {
+    margin-top: 2.6em;
+    background: #FFF;
+    padding: .8em 0;
+    color: #333333;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+[role='footer'] [role='copyright'] {
+    font-size: 1.6em;
+    font-style: italic;
+    color: #FFF;
+}
+
+
+
+
+
+
+
+/* =======================================
+	Gridster
+======================================= */
+.gridster .gs_w{
+	overflow: hidden;
+	
+	text-align: center;
+	
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+
+
+
+
+
